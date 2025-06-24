@@ -7,10 +7,10 @@
   <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --bg: #fdf6e3;
+      --bg: #fcf8ef;
       --green: #404e32;
-      --light: #f6f3dd;
-      --light-green: #d9e8d0;
+      --light: #fdf9e7;
+      --light-green: #e6eddc;
       --font-body: 'Inter', sans-serif;
       --font-hand: 'Patrick Hand', cursive;
     }
@@ -26,19 +26,26 @@
       color: #222;
       font-family: var(--font-body);
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+
+    .container {
+      display: flex;
+      flex: 1;
       padding: 2rem;
-      line-height: 1.8;
+      gap: 2rem;
+      flex-wrap: wrap;
     }
 
     .main {
       flex: 3;
-      padding-right: 2rem;
+      min-width: 300px;
     }
 
     .intro h1 {
       font-family: var(--font-hand);
-      font-size: 2.5rem;
+      font-size: 2.7rem;
       margin-bottom: 0.5rem;
     }
 
@@ -50,14 +57,6 @@
 
     section {
       margin-top: 2rem;
-    }
-
-    section h2 {
-      font-family: var(--font-hand);
-      text-transform: lowercase;
-      font-size: 1.3rem;
-      border-bottom: 1px solid #ccc;
-      margin-bottom: 0.5rem;
     }
 
     .highlight {
@@ -74,7 +73,7 @@
     }
 
     .buttons {
-      margin-top: 1.5rem;
+      margin-top: 2rem;
     }
 
     .buttons a {
@@ -100,6 +99,7 @@
       border-radius: 8px;
       padding: 1.5rem;
       font-family: var(--font-hand);
+      min-width: 250px;
     }
 
     .sidebar h3 {
@@ -118,48 +118,50 @@
       font-family: var(--font-body);
     }
 
-    @media (max-width: 768px) {
-      body {
-        flex-direction: column;
-      }
-
-      .sidebar {
-        margin-top: 2rem;
-      }
+    footer {
+      padding: 1rem 2rem;
+      text-align: center;
+      font-family: var(--font-hand);
+      color: #777;
     }
   </style>
 </head>
 <body>
-  <div class="main">
-    <div class="intro">
-      <h1>hey! i'm ryan.</h1>
-      <p><em>philadelphia (born & raised), chapel hill (school) & the world (always)</em></p>
+  <div class="container">
+    <div class="main">
+      <div class="intro">
+        <h1>hey! i'm ryan.</h1>
+        <p><em>philadelphia (born & raised), chapel hill (school) & the world (always)</em></p>
+      </div>
+
+      <section>
+        <p><span class="highlight">my present //</span> working at the intersection of medicine, neuroscience, and environmental health. currently researching trauma, neuroinflammation, and adolescent brain recovery.</p>
+        <p><span class="highlight">my past //</span> analyzed MRI scans from mexico city, contributed to EPA fuel emission policy, and published research on pediatric neurophysiology.</p>
+        <p><span class="highlight">my future //</span> integrate science + policy to fight health injustice. maybe summit a mountain or two :)</p>
+      </section>
+
+      <div class="buttons">
+        <a href="#">daily substack</a>
+        <a href="#">bi-monthly update</a>
+      </div>
     </div>
 
-    <section>
-      <p><span class="highlight">my present //</span> working at the intersection of medicine, neuroscience, and environmental health. currently researching trauma, neuroinflammation, and adolescent brain recovery.</p>
-      <p><span class="highlight">my past //</span> analyzed MRI scans from mexico city, contributed to EPA fuel emission policy, and published research on pediatric neurophysiology.</p>
-      <p><span class="highlight">my future //</span> integrate science + policy to fight health injustice. maybe summit a mountain or two :)</p>
-    </section>
+    <div class="sidebar">
+      <h3>*:・ﾟ✧ fav posts</h3>
+      <div class="card">how to stay curious</div>
+      <div class="card">scientific method as rebellion</div>
+      <div class="card">being wrong is a gift</div>
+      <div class="card">childhood in 400 ppm</div>
 
-    <div class="buttons">
-      <a href="#">CV</a>
-      <a href="#">contact</a>
+      <h3>*:・ﾟ✧ projects</h3>
+      <div class="card">brain fog & air pollution</div>
+      <div class="card">tbi & adolescent outcomes</div>
+      <div class="card">neuroinflammatory markers</div>
+      <div class="card">charlotte emissions policy</div>
     </div>
   </div>
-
-  <div class="sidebar">
-    <h3>*:・ﾟ✧ fav posts</h3>
-    <div class="card">how to stay curious</div>
-    <div class="card">scientific method as rebellion</div>
-    <div class="card">being wrong is a gift</div>
-    <div class="card">childhood in 400 ppm</div>
-
-    <h3>*:・ﾟ✧ projects</h3>
-    <div class="card">brain fog & air pollution</div>
-    <div class="card">tbi & adolescent outcomes</div>
-    <div class="card">neuroinflammatory markers</div>
-    <div class="card">charlotte emissions policy</div>
-  </div>
+  <footer>
+    made with ☕ by ryan parsaee
+  </footer>
 </body>
 </html>
