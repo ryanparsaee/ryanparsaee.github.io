@@ -1,62 +1,165 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>Ryan Parsaee</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
-  body {
-    margin: 0; 
-    font-family: 'Inter', sans-serif; 
-    background: #fefefe; 
-    color: #111;
-    display: flex; 
-    flex-direction: column; 
-    justify-content: center; 
-    align-items: center;
-    height: 100vh; 
-    text-align: center;
-    padding: 1rem;
-  }
-  h1 {
-    font-weight: 700;
-    font-size: 3rem;
-    margin-bottom: 0.5rem;
-  }
-  p {
-    font-weight: 400;
-    font-size: 1.25rem;
-    margin-bottom: 2rem;
-    max-width: 600px;
-  }
-  .star-button {
-    display: inline-block;
-    cursor: pointer;
-    font-size: 3rem;
-    color: #f5b742;
-    animation: dance 2s infinite ease-in-out;
-    user-select: none;
-    transition: color 0.3s ease;
-  }
-  .star-button:hover {
-    color: #ffa500;
-    animation-play-state: paused;
-  }
-  @keyframes dance {
-    0%, 100% { transform: rotate(0deg) translateY(0); }
-    25% { transform: rotate(15deg) translateY(-5px); }
-    50% { transform: rotate(0deg) translateY(0); }
-    75% { transform: rotate(-15deg) translateY(-5px); }
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ryan Parsaee</title>
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #fdf6e3;
+      --green: #404e32;
+      --light: #f6f3dd;
+      --light-green: #d9e8d0;
+      --font-body: 'Inter', sans-serif;
+      --font-hand: 'Patrick Hand', cursive;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: #222;
+      font-family: var(--font-body);
+      display: flex;
+      flex-direction: row;
+      padding: 2rem;
+      line-height: 1.8;
+    }
+
+    .main {
+      flex: 3;
+      padding-right: 2rem;
+    }
+
+    .intro h1 {
+      font-family: var(--font-hand);
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .intro em {
+      color: #555;
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    section {
+      margin-top: 2rem;
+    }
+
+    section h2 {
+      font-family: var(--font-hand);
+      text-transform: lowercase;
+      font-size: 1.3rem;
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 0.5rem;
+    }
+
+    .highlight {
+      font-weight: bold;
+    }
+
+    .italic {
+      font-style: italic;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .buttons {
+      margin-top: 1.5rem;
+    }
+
+    .buttons a {
+      display: inline-block;
+      margin-right: 1rem;
+      padding: 0.6rem 1rem;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      background-color: var(--green);
+      color: white;
+      transition: background-color 0.2s ease;
+    }
+
+    .buttons a:last-child {
+      background-color: var(--light-green);
+      color: black;
+    }
+
+    .sidebar {
+      flex: 1;
+      background-color: var(--green);
+      color: white;
+      border-radius: 8px;
+      padding: 1.5rem;
+      font-family: var(--font-hand);
+    }
+
+    .sidebar h3 {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    .card {
+      background-color: var(--light);
+      color: #222;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      font-family: var(--font-body);
+    }
+
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+
+      .sidebar {
+        margin-top: 2rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Ryan Parsaee</h1>
-  <p>Scientist | Researcher | Future MD/PhD Candidate</p>
-  
-  <a href="about.html" aria-label="Go to About page" class="star-button" title="About Me ★">
-    ★
-  </a>
+  <div class="main">
+    <div class="intro">
+      <h1>hey! i'm ryan.</h1>
+      <p><em>philadelphia (born & raised), chapel hill (school) & the world (always)</em></p>
+    </div>
+
+    <section>
+      <p><span class="highlight">my present //</span> working at the intersection of medicine, neuroscience, and environmental health. currently researching trauma, neuroinflammation, and adolescent brain recovery.</p>
+      <p><span class="highlight">my past //</span> analyzed MRI scans from mexico city, contributed to EPA fuel emission policy, and published research on pediatric neurophysiology.</p>
+      <p><span class="highlight">my future //</span> integrate science + policy to fight health injustice. maybe summit a mountain or two :)</p>
+    </section>
+
+    <div class="buttons">
+      <a href="#">CV</a>
+      <a href="#">contact</a>
+    </div>
+  </div>
+
+  <div class="sidebar">
+    <h3>*:・ﾟ✧ fav posts</h3>
+    <div class="card">how to stay curious</div>
+    <div class="card">scientific method as rebellion</div>
+    <div class="card">being wrong is a gift</div>
+    <div class="card">childhood in 400 ppm</div>
+
+    <h3>*:・ﾟ✧ projects</h3>
+    <div class="card">brain fog & air pollution</div>
+    <div class="card">tbi & adolescent outcomes</div>
+    <div class="card">neuroinflammatory markers</div>
+    <div class="card">charlotte emissions policy</div>
+  </div>
 </body>
 </html>
