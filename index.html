@@ -3,48 +3,60 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>About — Ryan Parsaee</title>
+<title>Ryan Parsaee</title>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
   body {
-    margin: 2rem auto;
-    max-width: 700px;
-    font-family: 'Inter', sans-serif;
-    background: #fff;
-    color: #222;
-    line-height: 1.6;
-    padding: 0 1rem;
+    margin: 0; 
+    font-family: 'Inter', sans-serif; 
+    background: #fefefe; 
+    color: #111;
+    display: flex; 
+    flex-direction: column; 
+    justify-content: center; 
+    align-items: center;
+    height: 100vh; 
+    text-align: center;
+    padding: 1rem;
   }
   h1 {
     font-weight: 700;
-    font-size: 2.5rem;
+    font-size: 3rem;
     margin-bottom: 0.5rem;
   }
   p {
-    font-size: 1.125rem;
+    font-weight: 400;
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    max-width: 600px;
   }
-  a.back-link {
+  .star-button {
     display: inline-block;
-    margin-top: 2rem;
+    cursor: pointer;
+    font-size: 3rem;
     color: #f5b742;
-    text-decoration: none;
-    font-weight: 600;
+    animation: dance 2s infinite ease-in-out;
+    user-select: none;
     transition: color 0.3s ease;
   }
-  a.back-link:hover {
+  .star-button:hover {
     color: #ffa500;
+    animation-play-state: paused;
+  }
+  @keyframes dance {
+    0%, 100% { transform: rotate(0deg) translateY(0); }
+    25% { transform: rotate(15deg) translateY(-5px); }
+    50% { transform: rotate(0deg) translateY(0); }
+    75% { transform: rotate(-15deg) translateY(-5px); }
   }
 </style>
 </head>
 <body>
-  <h1>About Ryan Parsaee</h1>
-  <p>
-    Placeholder bio: Ryan is a dedicated scientist and aspiring MD/PhD candidate focused on advancing knowledge in medicine and research. Passionate about bridging the gap between science and patient care, Ryan combines rigorous research skills with a commitment to impactful healthcare solutions.
-  </p>
-  <p>
-    This website will soon include detailed information on research projects, publications, and career milestones. Stay tuned!
-  </p>
+  <h1>Ryan Parsaee</h1>
+  <p>Scientist | Researcher | Future MD/PhD Candidate</p>
   
-  <a href="index.html" class="back-link" aria-label="Back to Home page">← Back to Home</a>
+  <a href="about.html" aria-label="Go to About page" class="star-button" title="About Me ★">
+    ★
+  </a>
 </body>
 </html>
