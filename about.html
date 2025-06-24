@@ -1,51 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>About — Ryan Parsaee</title>
-<style>
-  @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap');
-  body {
-    margin: 2rem auto;
-    max-width: 700px;
-    font-family: 'Inter', sans-serif;
-    background: #fff;
-    color: #222;
-    line-height: 1.6;
-    padding: 0 1rem;
-  }
-  h1 {
-    font-weight: 700;
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-  }
-  p {
-    font-size: 1.125rem;
-  }
-  a.back-link {
-    display: inline-block;
-    margin-top: 2rem;
-    color: #f5b742;
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease;
-  }
-  a.back-link:hover {
-    color: #ffa500;
-  }
-</style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ryan Parsaee</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      height: 100%;
+      width: 100%;
+      background: #ffffff;
+      color: #111111;
+      font-family: 'Inter', sans-serif;
+      font-weight: 100;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      text-align: center;
+      transition: opacity 0.6s ease;
+      opacity: 0;
+      animation: fadeIn 1s ease forwards;
+    }
+    h1 {
+      font-size: 3rem;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    p {
+      font-size: 1rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-top: 0.8rem;
+      color: #444;
+    }
+    .star-link {
+      position: fixed;
+      bottom: 1.5rem;
+      left: 1.5rem;
+      font-size: 1.5rem;
+      text-decoration: none;
+      color: #999;
+      animation: float 2s ease-in-out infinite;
+      transition: color 0.3s ease;
+    }
+    .star-link:hover {
+      color: #000;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+    @media (max-width: 600px) {
+      h1 {
+        font-size: 2rem;
+      }
+      p {
+        font-size: 0.85rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>About Ryan Parsaee</h1>
-  <p>
-    Placeholder bio: Ryan is a dedicated scientist and aspiring MD/PhD candidate focused on advancing knowledge in medicine and research. Passionate about bridging the gap between science and patient care, Ryan combines rigorous research skills with a commitment to impactful healthcare solutions.
-  </p>
-  <p>
-    This website will soon include detailed information on research projects, publications, and career milestones. Stay tuned!
-  </p>
-  
-<a href="/" class="back-link">
-
+  <h1>Ryan Parsaee</h1>
+  <p>Aspiring physician–scientist focused on neuroinflammation, trauma, and environmental health</p>
+  <a href="about.html" class="star-link" title="About Me">★</a>
 </body>
 </html>
