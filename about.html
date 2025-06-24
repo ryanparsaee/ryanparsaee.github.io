@@ -2,77 +2,164 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ryan Parsaee</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Inter:wght@400;700&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --bg: #fdf6e3;
+      --green: #404e32;
+      --light: #f6f3dd;
+      --light-green: #d9e8d0;
+      --font-body: 'Inter', sans-serif;
+      --font-hand: 'Patrick Hand', cursive;
+    }
+
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
-    html, body {
-      height: 100%;
-      width: 100%;
-      background: #ffffff;
-      color: #111111;
-      font-family: 'Inter', sans-serif;
-      font-weight: 100;
+
+    body {
+      background-color: var(--bg);
+      color: #222;
+      font-family: var(--font-body);
       display: flex;
-      justify-content: center;
-      align-items: center;
-      flex-direction: column;
-      text-align: center;
-      transition: opacity 0.6s ease;
-      opacity: 0;
-      animation: fadeIn 1s ease forwards;
+      flex-direction: row;
+      padding: 2rem;
+      line-height: 1.8;
     }
-    h1 {
-      font-size: 3rem;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
+
+    .main {
+      flex: 3;
+      padding-right: 2rem;
     }
-    p {
-      font-size: 1rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin-top: 0.8rem;
-      color: #444;
+
+    .intro h1 {
+      font-family: var(--font-hand);
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
     }
-    .star-link {
-      position: fixed;
-      bottom: 1.5rem;
-      left: 1.5rem;
-      font-size: 1.5rem;
+
+    .intro em {
+      color: #555;
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    section {
+      margin-top: 2rem;
+    }
+
+    section h2 {
+      font-family: var(--font-hand);
+      text-transform: lowercase;
+      font-size: 1.3rem;
+      border-bottom: 1px solid #ccc;
+      margin-bottom: 0.5rem;
+    }
+
+    .highlight {
+      font-weight: bold;
+    }
+
+    .italic {
+      font-style: italic;
+    }
+
+    a {
       text-decoration: none;
-      color: #999;
-      animation: float 2s ease-in-out infinite;
-      transition: color 0.3s ease;
+      color: inherit;
     }
-    .star-link:hover {
-      color: #000;
+
+    .buttons {
+      margin-top: 1.5rem;
     }
-    @keyframes float {
-      0%, 100% { transform: translateY(0); }
-      50% { transform: translateY(-4px); }
+
+    .buttons a {
+      display: inline-block;
+      margin-right: 1rem;
+      padding: 0.6rem 1rem;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      background-color: var(--green);
+      color: white;
+      transition: background-color 0.2s ease;
     }
-    @keyframes fadeIn {
-      to { opacity: 1; }
+
+    .buttons a:last-child {
+      background-color: var(--light-green);
+      color: black;
     }
-    @media (max-width: 600px) {
-      h1 {
-        font-size: 2rem;
+
+    .sidebar {
+      flex: 1;
+      background-color: var(--green);
+      color: white;
+      border-radius: 8px;
+      padding: 1.5rem;
+      font-family: var(--font-hand);
+    }
+
+    .sidebar h3 {
+      margin-bottom: 1rem;
+      font-size: 1rem;
+      text-align: center;
+    }
+
+    .card {
+      background-color: var(--light);
+      color: #222;
+      padding: 0.8rem;
+      margin-bottom: 1rem;
+      border-radius: 12px;
+      font-size: 0.9rem;
+      font-family: var(--font-body);
+    }
+
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
       }
-      p {
-        font-size: 0.85rem;
+
+      .sidebar {
+        margin-top: 2rem;
       }
     }
   </style>
 </head>
 <body>
-  <h1>Ryan Parsaee</h1>
-  <p>Aspiring physician–scientist focused on neuroinflammation, trauma, and environmental health</p>
-  <a href="about.html" class="star-link" title="About Me">★</a>
+  <div class="main">
+    <div class="intro">
+      <h1>hey! i'm ryan.</h1>
+      <p><em>philadelphia (born & raised), chapel hill (school) & the world (always)</em></p>
+    </div>
+
+    <section>
+      <p><span class="highlight">my present //</span> working at the intersection of medicine, neuroscience, and environmental health. currently researching trauma, neuroinflammation, and adolescent brain recovery.</p>
+      <p><span class="highlight">my past //</span> analyzed MRI scans from mexico city, contributed to EPA fuel emission policy, and published research on pediatric neurophysiology.</p>
+      <p><span class="highlight">my future //</span> integrate science + policy to fight health injustice. maybe summit a mountain or two :)</p>
+    </section>
+
+    <div class="buttons">
+      <a href="#">CV</a>
+      <a href="#">contact</a>
+    </div>
+  </div>
+
+  <div class="sidebar">
+    <h3>*:・ﾟ✧ fav posts</h3>
+    <div class="card">how to stay curious</div>
+    <div class="card">scientific method as rebellion</div>
+    <div class="card">being wrong is a gift</div>
+    <div class="card">childhood in 400 ppm</div>
+
+    <h3>*:・ﾟ✧ projects</h3>
+    <div class="card">brain fog & air pollution</div>
+    <div class="card">tbi & adolescent outcomes</div>
+    <div class="card">neuroinflammatory markers</div>
+    <div class="card">charlotte emissions policy</div>
+  </div>
 </body>
 </html>
