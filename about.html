@@ -2,164 +2,103 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Ryan Parsaee</title>
-  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --bg: #fdf6e3;
-      --green: #404e32;
-      --light: #f6f3dd;
-      --light-green: #d9e8d0;
-      --font-body: 'Inter', sans-serif;
-      --font-hand: 'Patrick Hand', cursive;
-    }
-
     * {
+      box-sizing: border-box;
       margin: 0;
       padding: 0;
-      box-sizing: border-box;
     }
-
     body {
-      background-color: var(--bg);
-      color: #222;
-      font-family: var(--font-body);
+      font-family: 'Roboto', sans-serif;
+      background-color: #f5f5f5;
+      color: #111;
       display: flex;
-      flex-direction: row;
-      padding: 2rem;
-      line-height: 1.8;
+      flex-direction: column;
+      min-height: 100vh;
     }
-
-    .main {
-      flex: 3;
-      padding-right: 2rem;
+    header {
+      padding: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
     }
-
-    .intro h1 {
-      font-family: var(--font-hand);
-      font-size: 2.5rem;
-      margin-bottom: 0.5rem;
+    header h1 {
+      font-size: 32px;
+      font-weight: 700;
     }
-
-    .intro em {
-      color: #555;
-      font-style: italic;
-      font-weight: 400;
-    }
-
-    section {
-      margin-top: 2rem;
-    }
-
-    section h2 {
-      font-family: var(--font-hand);
-      text-transform: lowercase;
-      font-size: 1.3rem;
-      border-bottom: 1px solid #ccc;
-      margin-bottom: 0.5rem;
-    }
-
-    .highlight {
-      font-weight: bold;
-    }
-
-    .italic {
-      font-style: italic;
-    }
-
-    a {
+    nav a {
+      margin-left: 20px;
       text-decoration: none;
-      color: inherit;
+      color: #111;
+      font-weight: 400;
+      transition: color 0.3s;
     }
-
-    .buttons {
-      margin-top: 1.5rem;
+    nav a:hover {
+      color: #666;
     }
-
-    .buttons a {
-      display: inline-block;
-      margin-right: 1rem;
-      padding: 0.6rem 1rem;
-      border-radius: 10px;
-      font-size: 0.9rem;
-      background-color: var(--green);
-      color: white;
-      transition: background-color 0.2s ease;
-    }
-
-    .buttons a:last-child {
-      background-color: var(--light-green);
-      color: black;
-    }
-
-    .sidebar {
+    .hero {
       flex: 1;
-      background-color: var(--green);
-      color: white;
-      border-radius: 8px;
-      padding: 1.5rem;
-      font-family: var(--font-hand);
-    }
-
-    .sidebar h3 {
-      margin-bottom: 1rem;
-      font-size: 1rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 100px 20px;
       text-align: center;
     }
-
-    .card {
-      background-color: var(--light);
-      color: #222;
-      padding: 0.8rem;
-      margin-bottom: 1rem;
-      border-radius: 12px;
-      font-size: 0.9rem;
-      font-family: var(--font-body);
+    .hero h2 {
+      font-size: 60px;
+      font-weight: 700;
+      margin-bottom: 20px;
     }
-
-    @media (max-width: 768px) {
-      body {
-        flex-direction: column;
-      }
-
-      .sidebar {
-        margin-top: 2rem;
-      }
+    .hero p {
+      font-size: 20px;
+      max-width: 600px;
+      line-height: 1.5;
+      margin-bottom: 40px;
+    }
+    .hero a.button {
+      padding: 15px 30px;
+      border: 2px solid #111;
+      text-decoration: none;
+      font-weight: 500;
+      color: #111;
+      transition: background 0.3s, color 0.3s;
+    }
+    .hero a.button:hover {
+      background: #111;
+      color: #fff;
+    }
+    footer {
+      padding: 30px;
+      text-align: center;
+      font-size: 14px;
+      color: #666;
     }
   </style>
 </head>
 <body>
-  <div class="main">
-    <div class="intro">
-      <h1>hey! i'm ryan.</h1>
-      <p><em>philadelphia (born & raised), chapel hill (school) & the world (always)</em></p>
-    </div>
 
-    <section>
-      <p><span class="highlight">my present //</span> working at the intersection of medicine, neuroscience, and environmental health. currently researching trauma, neuroinflammation, and adolescent brain recovery.</p>
-      <p><span class="highlight">my past //</span> analyzed MRI scans from mexico city, contributed to EPA fuel emission policy, and published research on pediatric neurophysiology.</p>
-      <p><span class="highlight">my future //</span> integrate science + policy to fight health injustice. maybe summit a mountain or two :)</p>
-    </section>
+  <header>
+    <h1>Ryan Parsaee</h1>
+    <nav>
+      <a href="#work">Work</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
 
-    <div class="buttons">
-      <a href="#">CV</a>
-      <a href="#">contact</a>
-    </div>
+  <div class="hero">
+    <h2>Creative Developer & Designer</h2>
+    <p>I build clean, modern web experiences with a focus on simplicity and clarity. Let’s work together to bring your ideas to life.</p>
+    <a href="#work" class="button">See My Work</a>
   </div>
 
-  <div class="sidebar">
-    <h3>*:・ﾟ✧ fav posts</h3>
-    <div class="card">how to stay curious</div>
-    <div class="card">scientific method as rebellion</div>
-    <div class="card">being wrong is a gift</div>
-    <div class="card">childhood in 400 ppm</div>
+  <footer>
+    © 2025 Ryan Parsaee. All rights reserved.
+  </footer>
 
-    <h3>*:・ﾟ✧ projects</h3>
-    <div class="card">brain fog & air pollution</div>
-    <div class="card">tbi & adolescent outcomes</div>
-    <div class="card">neuroinflammatory markers</div>
-    <div class="card">charlotte emissions policy</div>
-  </div>
 </body>
 </html>
