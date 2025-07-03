@@ -65,6 +65,15 @@
       font-weight: 700;
       margin-bottom: 20px;
     }
+    #typewriter::after {
+      content: "|";
+      animation: blink 0.7s infinite;
+      color: var(--text-color);
+    }
+    @keyframes blink {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0; }
+    }
     .hero p {
       font-size: 20px;
       line-height: 1.6;
@@ -155,7 +164,7 @@
   </nav>
 
   <div class="hero">
-    <h1>Hello! I'm Ryan.</h1>
+    <h1 id="typewriter"></h1>
     <p>I'm a Student, Web Developer, and Writer. I build accessible and thoughtful digital experiences, and I write about technology, health equity, and open science.</p>
     <button class="pronounce-button" onclick="pronounceName()">🔊 Hear how to pronounce my name</button>
   </div>
@@ -218,7 +227,6 @@
       }
     }
 
-    // Load theme preference on page load
     if (localStorage.getItem("theme") === "light") {
       document.documentElement.setAttribute("data-theme", "light");
     }
@@ -227,6 +235,19 @@
       const utterance = new SpeechSynthesisUtterance("Ryan Parsaee");
       speechSynthesis.speak(utterance);
     }
+
+    // Typewriter effect
+    const text = "Heya, it’s Ryan!";
+    const typewriter = document.getElementById("typewriter");
+    let index = 0;
+    function typeLetter() {
+      if (index < text.length) {
+        typewriter.textContent += text.charAt(index);
+        index++;
+        setTimeout(typeLetter, 100);
+      }
+    }
+    window.addEventListener("load", typeLetter);
   </script>
 
 </body>
