@@ -233,10 +233,38 @@
       document.documentElement.setAttribute("data-theme", "light");
     }
 
-    function pronounceName() {
-      const utterance = new SpeechSynthesisUtterance("Ryan Parsaee");
-      speechSynthesis.speak(utterance);
+<script>
+function pronounceName() {
+  const utterance = new SpeechSynthesisUtterance("Rah-yahn Par-sah-eh-ee");
+
+  const setVoice = () => {
+    const voices = speechSynthesis.getVoices();
+
+    // Sort by ideal traits: British, male, realistic
+    const preferred = voices.find(v =>
+      (v.name.includes("Daniel") || 
+       v.name.includes("Google UK") || 
+       v.name.includes("George") || 
+       (v.lang === "en-GB" && v.name.toLowerCase().includes("male")))
+    );
+
+    if (preferred) {
+      utterance.voice = preferred;
+    } else {
+      console.warn("Couldn't find your sexy British guy. Falling back to default voice.");
     }
+
+    speechSynthesis.speak(utterance);
+  };
+
+  if (speechSynthesis.getVoices().length === 0) {
+    speechSynthesis.addEventListener("voiceschanged", setVoice);
+  } else {
+    setVoice();
+  }
+}
+</script>
+
 
     // Typewriter effect
     const text = "Hi, I'm Ryan!";
